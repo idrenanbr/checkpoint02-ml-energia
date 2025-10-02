@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0">
+  <title>CP02_001 — Classificação (Smart Grid)</title>
+  <nodes>
+    <node id="1" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" />
+    <node id="2" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" />
+    <node id="3" name="Data Sampler" qualified_name="Orange.widgets.data.owdatasampler.OWDataSampler" />
+    <node id="4" name="Test & Score" qualified_name="Orange.widgets.evaluate.owtestlearners.OWTestLearners" />
+    <node id="5" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" />
+  </nodes>
+  <links>
+    <link source_node_id="1" source_channel="Data" sink_node_id="2" sink_channel="Data" />
+    <link source_node_id="2" source_channel="Data" sink_node_id="3" sink_channel="Data" />
+    <link source_node_id="3" source_channel="Data Sample" sink_node_id="4" sink_channel="Data" />
+    <link source_node_id="4" source_channel="Evaluation Results" sink_node_id="5" sink_channel="Evaluation Results" />
+  </links>
+</scheme>
